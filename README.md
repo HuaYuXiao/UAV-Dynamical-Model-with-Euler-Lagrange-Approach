@@ -1,4 +1,4 @@
-# simulation of Quadcopter-model
+# UAV-Dynamical-Model-with-Euler-Lagrange-Approach
 SUSTech SDM271 System Modeling and Simulation
 
 Build the dynamics model of the UAV in Matlab/simulink, and realize the UAV heavy straight upward motion for 5 seconds by controlling four motors.
