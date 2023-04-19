@@ -3,26 +3,15 @@ SUSTech SDM271 System Modeling and Simulation
 
 Build the dynamics model of the UAV in Matlab/simulink, and realize the UAV heavy straight upward motion for 5 seconds by controlling four motors.
 
-```
-四旋翼构型为“X”型，螺旋桨序号如下所示：
-         3↓   1↑
-           \ /
-           / \
-         2↑   4↓
-其中，↑表示螺旋桨逆时针旋转；↓表示螺旋桨顺时针旋转。
-```
+![image](https://user-images.githubusercontent.com/117464811/233068668-f5f69d8b-eece-4149-9a12-27a61c9f50f4.png)
 
-## 外部封装
+## structure
 
-![image](https://user-images.githubusercontent.com/117464811/232400041-a02f1691-366f-4566-a015-334dc7a0e8bb.jpeg)
-
-## 总体结构
-
-控制效果模型、动力学模型、运动学模型
+Control effect model, dynamic model, kinematic model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400144-3a323105-58ab-4e66-9777-2d0e6c4ffe72.jpeg)
 
-### 控制效果模型
+### Control effect model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400240-b8c5aa4b-0ac8-4100-b623-58180f34edf0.jpeg)
 
@@ -52,13 +41,13 @@ function [f, tau_x, tau_y, tau_z] = fcn(w1, w2, w3, w4, c_T, c_M, d)
 end
 ```
 
-### 动力学模型
+### dynamic model
 
-位置动力学模型、姿态动力学模型
+Position dynamics model, pose dynamic model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400341-023d7cfb-9e88-46f8-b208-f4bddd26f33a.jpeg)
 
-#### 位置动力学模型
+#### Position dynamics model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400393-1ff23765-e19f-499c-94db-08cab5e79c7b.jpeg)
 
@@ -88,7 +77,7 @@ function [v_x_dot, v_y_dot, v_z_dot] = fcn(m, g, phi, theta, psi, f)
 end
 ```
 
-#### 姿态动力学模型
+#### pose dynamic model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400453-02f10743-831f-4939-bb82-9a3da6113299.jpeg)
 
@@ -126,17 +115,17 @@ fcn(tau_x, tau_y, tau_z, w1, w2, w3, w4, I_xx, I_yy, I_zz, J_RP, p, q, r)
 end
 ```
 
-### 运动学模型
+### kinematics model
 
-位置运动学模型、姿态运动学模型
+Position kinematics model, pose kinematics model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400704-9e7bf79b-8248-4d57-889b-4b2071d31630.jpeg)
 
-#### 位置运动学模型
+#### Position kinematics model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400778-64b253e8-e537-4581-97bf-6d043f4749d6.jpeg)
 
-#### 姿态运动学模型
+#### pose kinematics model
 
 ![image](https://user-images.githubusercontent.com/117464811/232400824-65f98fee-01fc-468c-8457-c21329b804d7.jpeg)
 
@@ -165,17 +154,16 @@ function [phi_dot, theta_dot, psi_dot] = fcn(p, q, r, phi, theta)
 end
 ```
 
-## 运行结果
+## result
 
-### 位置变化曲线
+### Position curve
 
 ![image](https://user-images.githubusercontent.com/117464811/232401047-00438cf8-f45e-4151-8d7b-a7bb1ee523f1.jpeg)
 
-### 平移速度变化曲线
+### velocity Translate curve
 
 ![image](https://user-images.githubusercontent.com/117464811/232401071-6ae52a0f-9f0b-4b51-8419-f85501a95af3.jpeg)
 
-### 姿态角变化曲线
+### Attitude angle curve
 
 ![image](https://user-images.githubusercontent.com/117464811/232401166-02cddcf2-95f0-41cd-a3ea-ebcd4f5d808f.jpeg)
-
